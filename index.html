@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Dice game</title>
+</head>
+
+<body>
+  
+  <main>
+    <!-- Initial Form for Game Setup start-->
+      <div id="initial_game" class="flex justify-center items-center h-screen">
+       <form id="form_1st" class="w-11/12 border-2 p-3 rounded-xl shadow-sm">
+         <h3 class="text-purple-500 font-bold text-2xl">Dice Game</h3>
+          <input
+            type="number"
+            name="wining_score"
+            required
+            placeholder="Enter Winning score"
+            class="input input-bordered input-primary w-full w-full" />
+            
+            <input
+            type="number"
+            name="players"
+            required
+            min="2"
+            max="10"
+            placeholder="Enter players number "
+            class="input input-bordered input-primary w-full w-full mt-4" />
+            
+            <button class="btn btn-outline bg-primary text-white w-full mt-4 pointer">let's play </button>
+          </form>
+      </div>
+    <!-- Initial Form for Game Setup end-->
+    
+    <!-- gamearea start-->
+    <div id="gamearea" class="flex justify-center items-center h-screen hidden">
+       <div class="w-11/12 border-2 rounded-xl p-2">
+        <div>
+            <!--game header-->
+            <div class="flex justify-between items-center py-2">
+              <h4 class="text-purple-700 font-bold text-xl">Dice Game</h4>
+              <p class="text-center mt-8 text-2xl text-sky-400 ml-4" id="showTime"></p>
+              <h5 id="wining_score_card" class="border-2 p-1 rounded-xl border-purple-700 text-purple-800"></h5>
+            </div>
+            <!--game config-->
+            <div class="flex justify-between items-center">
+             <button id="restart" class="btn bg-yellow-500 text-white" onclick="restart()">restart</button>
+             
+              <div>
+               <!-- <input type="number" name="number2" class="border-2" id="number2" value="">-->
+                <button id="roll" type="submit" class="h-12 w-12 border-2 rounded-full border-purple-700 text-purple-700" onclick="rollDice()">Roll</button>
+              </div>
+             
+             <button id="reser" class="btn btn-error text-white" onclick="reset()">Reset</button>
+             
+            </div>
+            <!--card section-->
+               <div id="user_container" class="mt-4 grid grid-cols-[repeat(auto-fit,_minmax(180px,1fr))] gap-1">
+              </div>
+   
+        </div>
+        </div>
+    </div>
+    <!--gamearea end-->
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
